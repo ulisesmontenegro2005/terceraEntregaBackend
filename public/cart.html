@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Cart </title>
+</head>
+<body>
+
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- IMAGEN AVATAR FALTANTE -->
+                  <a href="/" class="text-gray-300 rounded-md px-3 py-2 text-sm font-medium">Store</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <a onclick="logout()" class="text-white">Sign out</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pt-2 pb-3">
+            <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Store</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex">
+
+        <div class="bg-gray-700 text-white p-12 rounded-3xl ml-8 mt-8 w-6/12">
+          <h2 class="text-3xl mb-4">User Info</h2>
+          <img src="" alt="Prox Avatar" id="avatar">
+          <p id="mail"></p>
+          <p id="name"></p>
+          <p id="address"></p>
+          <p id="age"></p>
+          <p id="tel"></p>
+
+          <form class="flex mt-4" action="/buy" method="post">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Buy cart shop.</button>
+            <p class="ml-2 mt-2" id="cart-price"></p>
+          </form>
+        </div>
+
+        <div class="mt-8 w-6/12">
+          <div class="flow-root">
+            <ul role="list" class="flex flex-col items-center -my-6 divide-y divide-gray-200" id="cart-container">
+  
+            
+  
+  
+  
+  
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <script src="./js/cart.js"></script>
+      <script src="./js/session.js"></script>
+</body>
+</html>
