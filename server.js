@@ -72,8 +72,8 @@ const upload = multer({ dest: 'src/uploads' })
 
 //  TWILIO --------------
 
-const accountSid = 'ACda8cdbe2a823295d72a72fded5778f2f';
-const authToken = "c32fa491cc9581f8c3cf6703d735893e";
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 import twilio from 'twilio';
 const client = twilio(accountSid, authToken)
 
