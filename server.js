@@ -70,13 +70,6 @@ const transporter = createTransport({
 import multer from 'multer';
 const upload = multer({ dest: 'src/uploads' })
 
-//  TWILIO --------------
-
-const accountSid = process.env.accountSid;
-const authToken = process.env.authToken;
-import twilio from 'twilio';
-const client = twilio(accountSid, authToken)
-
 //----- SERVER -----//
 
     const app = express();
@@ -293,14 +286,6 @@ const client = twilio(accountSid, authToken)
         } catch (error) {
             console.log(error);
         }
-
-        client.messages
-        .create({
-            body: `New user order: ${user.username}, order: ${prods.join(', ')}, total: ${price}`,
-            from: 'whatsapp:+14155238886',
-            to: 'whatsapp:+5491158961046'
-        })
-        .then(message => console.log(message.sid))
 
         const userUpdate = await UserModel.updateOne({'username': req.session.passport.user}, { 'cart': [] });
 
